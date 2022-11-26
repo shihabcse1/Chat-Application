@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const path = require("path");
 const loginRouter = require("./router/loginRouter");
+const inboxRouter = require("./router/inboxRouter");
 
 // internal imports
 const {
@@ -35,6 +36,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // routing setup
 app.use("/", loginRouter);
+app.use("/inbox", inboxRouter);
 
 // 404 not found handler
 app.use(notFoundHandler);

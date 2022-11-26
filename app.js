@@ -2,6 +2,8 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const path = require("path");
+const loginRouter = require("./router/loginRouter");
 
 // internal imports
 const {
@@ -24,6 +26,15 @@ mongoose
 // request parsers
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// set view engine
+app.set("view engine", "ejs");
+
+// set static folder
+app.use(express.static(path.join(__dirname, "public")));
+
+// routing setup
+app.use("/", loginRouter);
 
 // 404 not found handler
 app.use(notFoundHandler);

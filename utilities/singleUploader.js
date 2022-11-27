@@ -49,3 +49,5 @@ function uploader(
 
     return upload;
 }
+
+module.exports = uploader;

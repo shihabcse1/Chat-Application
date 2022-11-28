@@ -3,6 +3,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const path = require("path");
+const cookieParser = require("cookie-parser");
 const loginRouter = require("./router/loginRouter");
 const inboxRouter = require("./router/inboxRouter");
 const usersRouter = require("./router/usersRouter");
@@ -34,6 +35,9 @@ app.set("view engine", "ejs");
 
 // set static folder
 app.use(express.static(path.join(__dirname, "public")));
+
+// parse cookies
+app.use(cookieParser(process.env.COOKIE_SECRET));
 
 // routing setup
 app.use("/", loginRouter);

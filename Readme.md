@@ -9,9 +9,16 @@
 
 ## Table of Contents
 
+-   [Overview] (#overview)
 -   [How to run](#how-to-run)
 -   [Features](#features)
 -   [Contact](#contact)
+
+<!-- OVERVIEW -->
+
+## Overview
+
+<h3>It's a Chat application with express.js and ejs template engine</h3>
 
 <!-- FEATURES -->
 
